@@ -6,11 +6,12 @@
 #include <QNetworkRequest>
 #include <functional>
 
-struct NetworkData {
-  std::function<void(NetworkResult &)> onSuccess;
-  std::function<void(NetworkResult &)> onError;
+struct NetworkData
+{
+    std::function<void(NetworkResult&)> onSuccess;
+    std::function<void(NetworkResult&)> onError;
 
-  NetworkRequestType type;
+    NetworkRequestType type;
 
-  QNetworkRequest request;
+    QNetworkRequest request;
 };

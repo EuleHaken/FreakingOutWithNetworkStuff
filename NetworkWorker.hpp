@@ -2,9 +2,10 @@
 
 #include <QObject>
 
-class NetworkWorker : public QObject {
-  Q_OBJECT
+class NetworkWorker : public QObject
+{
+    Q_OBJECT
 
 signals:
-  void requestUrl();
+    void requestUrl();
 };

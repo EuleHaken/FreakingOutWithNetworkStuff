@@ -6,19 +6,24 @@
 #include <QObject>
 #include <QThread>
 
-int main(int argc, char *argv[]) {
-  QCoreApplication a(argc, argv);
+int main(int argc, char* argv[])
+{
+    QCoreApplication a(argc, argv);
 
-  NetworkManager::init();
+    NetworkManager::init();
 
-  NetworkRequest("https://supinic.com/api/bot/user/resolve/name/eulehaken")
-      .onSuccess([](NetworkResult &result) { qInfo() << result.getData(); })
-      .onError([](NetworkResult &result) { qInfo() << result.getData(); })
-      .execute();
+    NetworkRequest("https://supinic.com/api/bot/user/resolve/name/eulehaken")
+        .onSuccess([](NetworkResult& result) {
+            qInfo() << result.getData();
+        })
+        .onError([](NetworkResult& result) {
+            qInfo() << result.getData();
+        })
+        .execute();
 
-  qInfo() << "Done!";
+    qInfo() << "Done!";
 
-  a.exec();
-  NetworkManager::deinit();
-  return 0;
+    a.exec();
+    NetworkManager::deinit();
+    return 0;
 }

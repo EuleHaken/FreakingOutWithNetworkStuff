@@ -4,18 +4,19 @@
 
 #pragma once
 
-class NetworkResult {
-  Q_DISABLE_COPY(NetworkResult)
+class NetworkResult
+{
+    Q_DISABLE_COPY(NetworkResult)
 
 public:
-  explicit NetworkResult(const QByteArray& data, int status);
+    explicit NetworkResult(const QByteArray& data, int status);
 
-  QJsonDocument jsonDocument() const;
-  QJsonObject jsonObject() const;
+    QJsonDocument jsonDocument() const;
+    QJsonObject jsonObject() const;
 
-  const QByteArray &getData() const;
+    const QByteArray& getData() const;
 
 private:
-  QByteArray _data;
-  int _status;
+    QByteArray _data;
+    int _status;
 };
